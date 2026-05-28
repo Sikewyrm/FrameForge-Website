@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FrameForge — A free Warframe companion app that tracks your inventory, foundry progress, and more in real time.">
+  <title>FrameForge — Warframe Companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">⚙</span>
+        FrameForge
+      </a>
+      <div class="nav-links">
+        <a href="docs.html">Docs</a>
+        <a href="#features">Features</a>
+        <a href="https://github.com/Sikewyrm/FrameForge" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <a href="#download" class="btn-download">Download</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-badge">Open Source · Free · Windows</div>
+          <h1 class="hero-title">
+            Your Warframe inventory,<br>
+            <span class="accent">always up to date.</span>
+          </h1>
+          <p class="hero-subtitle">
+            FrameForge reads your game memory in real time to track what you own,
+            what you're crafting, and what you still need — without touching your files.
+          </p>
+          <div class="hero-actions">
+            <a href="#download" class="btn-primary">Download for Windows</a>
+            <a href="docs.html" class="btn-outline">Read the docs →</a>
+          </div>
+          <p class="hero-note">Free and open source. No account required.</p>
+        </div>
+        <div class="hero-visual">
+          <div class="app-preview">
+            <div class="preview-bar">
+              <span class="preview-dot red"></span>
+              <span class="preview-dot yellow"></span>
+              <span class="preview-dot green"></span>
+              <span class="preview-title">FrameForge</span>
+            </div>
+            <div class="preview-content">
+              <div class="preview-header">
+                <span class="preview-mr">MR 14</span>
+                <span class="preview-status">● Scanning</span>
+              </div>
+              <div class="preview-tabs">
+                <span class="tab active">Inventory</span>
+                <span class="tab">Foundry</span>
+                <span class="tab">Relics</span>
+              </div>
+              <div class="preview-items">
+                <div class="preview-item">
+                  <span class="item-name">Nano Spores</span>
+                  <span class="item-count">84,200</span>
+                </div>
+                <div class="preview-item">
+                  <span class="item-name">Morphics</span>
+                  <span class="item-count">123</span>
+                </div>
+                <div class="preview-item">
+                  <span class="item-name">Plastids</span>
+                  <span class="item-count">12,400</span>
+                </div>
+                <div class="preview-item">
+                  <span class="item-name">Saryn Blueprint</span>
+                  <span class="item-count gold">1</span>
+                </div>
+                <div class="preview-item">
+                  <span class="item-name">Orokin Cell</span>
+                  <span class="item-count">47</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2>Everything you need to forge your arsenal</h2>
+          <p>FrameForge runs alongside your game and keeps you informed — no manual entry, no spreadsheets.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon">📦</div>
+            <h3>Live Inventory</h3>
+            <p>Resources, blueprints, weapons, Warframes — all tracked automatically as your inventory changes in game.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔨</div>
+            <h3>Foundry Tracker</h3>
+            <p>See which components you own, which blueprints you have, and exactly what you're still missing for every build.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💎</div>
+            <h3>Relic Indicators</h3>
+            <p>Know which relics drop the parts you need, right in the component list — no more switching tabs.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⭐</div>
+            <h3>Mastery Rank</h3>
+            <p>Your current Mastery Rank is always visible in the header — updated every scan cycle.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Vault Status</h3>
+            <p>Each prime item shows whether it's currently vaulted or available in the active drop table.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Read-Only</h3>
+            <p>FrameForge never writes to or modifies your Warframe installation — it only reads.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how-it-works">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2>Simple by design</h2>
+          <p>Get started in seconds.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Download and install</h3>
+              <p>Download the latest release and run the installer. No configuration needed.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Launch Warframe</h3>
+              <p>Start Warframe as you normally would. FrameForge detects the game process automatically.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Return to your Orbiter</h3>
+              <p>After a mission or visiting a relay, come back to your Orbiter — your inventory refreshes automatically.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download -->
+    <section class="download" id="download">
+      <div class="section-inner">
+        <div class="download-content">
+          <h2>Ready to forge?</h2>
+          <p>Download FrameForge for Windows — free, open source, no account required.</p>
+          <div class="download-actions">
+            <a href="https://github.com/Sikewyrm/FrameForge/releases" target="_blank" rel="noopener" class="btn-primary btn-large">
+              ⬇ Download FrameForge
+            </a>
+            <p class="download-note">Windows 10 / 11 &nbsp;·&nbsp; Requires Warframe to be running</p>
+          </div>
+          <a href="https://github.com/Sikewyrm/FrameForge" target="_blank" rel="noopener" class="github-link">
+            View source on GitHub →
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-icon">⚙</span>
+        FrameForge
+      </div>
+      <div class="footer-links">
+        <a href="docs.html">Docs</a>
+        <a href="#features">Features</a>
+        <a href="https://github.com/Sikewyrm/FrameForge" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <p class="footer-note">Not affiliated with Digital Extremes or Warframe.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

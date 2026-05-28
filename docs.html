@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FrameForge documentation — installation, features, and FAQ.">
+  <title>Docs — FrameForge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/docs.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">⚙</span>
+        FrameForge
+      </a>
+      <div class="nav-links">
+        <a href="docs.html" style="color: var(--accent)">Docs</a>
+        <a href="index.html#features">Features</a>
+        <a href="https://github.com/Sikewyrm/FrameForge" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <a href="index.html#download" class="btn-download">Download</a>
+    </div>
+  </nav>
+
+  <div class="docs-layout">
+
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <div class="sidebar-group">
+          <div class="sidebar-group-title">Getting Started</div>
+          <a href="#installation" class="sidebar-link">Installation</a>
+          <a href="#first-launch" class="sidebar-link">First Launch</a>
+        </div>
+        <div class="sidebar-group">
+          <div class="sidebar-group-title">Features</div>
+          <a href="#inventory" class="sidebar-link">Inventory</a>
+          <a href="#foundry" class="sidebar-link">Foundry</a>
+          <a href="#mastery-rank" class="sidebar-link">Mastery Rank</a>
+          <a href="#vault-status" class="sidebar-link">Vault Status</a>
+        </div>
+        <div class="sidebar-group">
+          <div class="sidebar-group-title">Reference</div>
+          <a href="#faq" class="sidebar-link">FAQ</a>
+          <a href="#known-limitations" class="sidebar-link">Known Limitations</a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="docs-content">
+      <article>
+
+        <h1>Documentation</h1>
+        <p class="docs-intro">Learn how to install and use FrameForge to track your Warframe inventory in real time.</p>
+
+        <hr class="docs-divider">
+
+        <!-- Installation -->
+        <section id="installation">
+          <h2>Installation</h2>
+
+          <h3>System requirements</h3>
+          <ul>
+            <li>Windows 10 or Windows 11 (64-bit)</li>
+            <li>Warframe — Steam or standalone client</li>
+            <li>No administrator privileges required at runtime</li>
+          </ul>
+
+          <h3>Steps</h3>
+          <ol>
+            <li>Go to the <a href="https://github.com/Sikewyrm/FrameForge/releases" target="_blank" rel="noopener">Releases page</a> on GitHub.</li>
+            <li>Download the latest <code>FrameForge-setup.exe</code>.</li>
+            <li>Run the installer and follow the prompts.</li>
+            <li>Launch FrameForge from your Start menu or desktop shortcut.</li>
+          </ol>
+
+          <div class="callout callout-info">
+            <strong>SmartScreen warning:</strong> Windows may warn that the app is from an unknown publisher because FrameForge is not yet code-signed. Click <em>More info → Run anyway</em> to proceed.
+          </div>
+        </section>
+
+        <hr class="docs-divider">
+
+        <!-- First Launch -->
+        <section id="first-launch">
+          <h2>First Launch</h2>
+
+          <p>You can launch FrameForge before or after starting Warframe — it doesn't matter which order. The app polls for a running Warframe process at startup and will detect it automatically.</p>
+
+          <h3>Triggering an inventory refresh</h3>
+          <p>Return to your <strong>Orbiter</strong> after completing a mission or visiting a relay. Your inventory will refresh within about 10 seconds.</p>
+
+          <div class="callout callout-warning">
+            <strong>Heads up:</strong> Opening the in-game ESC menu does <em>not</em> reliably trigger a scan. Returning to your Orbiter is the most consistent refresh trigger.
+          </div>
+        </section>
+
+        <hr class="docs-divider">
+
+        <!-- Inventory -->
+        <section id="inventory">
+          <h2>Inventory</h2>
+
+          <p>The Inventory tab shows everything tracked in your Warframe account, including:</p>
+          <ul>
+            <li>Crafting resources (Nano Spores, Morphics, Plastids, Polymer Bundle, etc.)</li>
+            <li>Blueprints and recipe items</li>
+            <li>Warframes, weapons, and companions (unique items)</li>
+          </ul>
+
+          <p>Quantities are updated automatically whenever FrameForge detects a valid inventory state in memory — typically when you return to your Orbiter.</p>
+
+          <h3>How scanning works</h3>
+          <p>FrameForge uses two scanners that run in parallel:</p>
+          <ul>
+            <li><strong>Resource scanner</strong> — finds crafting resources and blueprints by matching the <code>ItemCount / ItemType</code> pattern in memory.</li>
+            <li><strong>Unique item scanner</strong> — locates warframes, weapons, and companions using a fast Aho-Corasick pattern match on known item paths.</li>
+          </ul>
+          <p>Neither scanner writes to memory or modifies game files.</p>
+        </section>
+
+        <hr class="docs-divider">
+
+        <!-- Foundry -->
+        <section id="foundry">
+          <h2>Foundry</h2>
+
+          <p>The Foundry tab helps you plan builds. Items are organized into categories:</p>
+          <ul>
+            <li>Warframes</li>
+            <li>Primary weapons</li>
+            <li>Secondary weapons</li>
+            <li>Melee weapons</li>
+            <li>Companions</li>
+            <li>Archwing</li>
+          </ul>
+
+          <h3>Component status colours</h3>
+          <ul>
+            <li><span class="colour-swatch gold-swatch"></span> <strong>Gold</strong> — you own this component or already have it built.</li>
+            <li><span class="colour-swatch blue-swatch"></span> <strong>Blue</strong> — you have the blueprint but not the component itself.</li>
+            <li><span class="colour-swatch dark-swatch"></span> <strong>Dark</strong> — you're missing both the component and the blueprint.</li>
+          </ul>
+
+          <h3>Relic indicators</h3>
+          <p>If a missing component can be obtained from a relic <em>you currently own</em>, a relic icon appears next to it. This makes it easy to prioritise which relics to run.</p>
+
+          <h3>Tracking panel</h3>
+          <p>Click any item to open a tracking panel showing every required component and its status. Use the <strong>Missing only</strong> toggle to focus on what you still need.</p>
+        </section>
+
+        <hr class="docs-divider">
+
+        <!-- Mastery Rank -->
+        <section id="mastery-rank">
+          <h2>Mastery Rank</h2>
+
+          <p>Your current Mastery Rank is displayed as a gold badge in the app header. It's read from the <code>PlayerLevel</code> field in game memory during each scan cycle, so it always reflects your live rank.</p>
+        </section>
+
+        <hr class="docs-divider">
+
+        <!-- Vault Status -->
+        <section id="vault-status">
+          <h2>Vault Status</h2>
+
+          <p>Every prime item in the Foundry shows a vault badge:</p>
+          <ul>
+            <li><strong>🔒 Vaulted</strong> — parts are currently unavailable in the standard relic drop table.</li>
+            <li><strong>🔓 Available</strong> — parts can be obtained from active relics right now.</li>
+          </ul>
+
+          <p>Vault data comes from the <a href="https://github.com/WFCD/warframe-items" target="_blank" rel="noopener">WFCD warframe-items</a> dataset and is bundled with each FrameForge release.</p>
+        </section>
+
+        <hr class="docs-divider">
+
+        <!-- FAQ -->
+        <section id="faq">
+          <h2>FAQ</h2>
+
+          <div class="faq-item">
+            <h3>Is FrameForge safe to use?</h3>
+            <p>FrameForge only reads game memory — it never writes to it or modifies any files. It uses the same read-only Windows APIs that other Warframe companion tools use (<code>ReadProcessMemory</code> / <code>VirtualQueryEx</code>). That said, you use it at your own risk.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Why doesn't my inventory update when I press ESC?</h3>
+            <p>The in-game ESC menu doesn't reliably put inventory data into memory in a scannable state. Return to your Orbiter after a mission or relay visit for the most consistent results.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Will you add mods or arcanes?</h3>
+            <p>Not currently. Relay data contaminates small mod counts, making accurate tracking unreliable. It may be revisited in a future version.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Will you add trading or market features?</h3>
+            <p>Not planned. FrameForge focuses on inventory and crafting. For trading, check out <a href="https://warframe.market" target="_blank" rel="noopener">warframe.market</a>.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can I use FrameForge on Linux or Mac?</h3>
+            <p>No. FrameForge uses Windows-specific APIs and is only supported on Windows 10 / 11.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>How do I report a bug?</h3>
+            <p>Open an issue on the <a href="https://github.com/Sikewyrm/FrameForge/issues" target="_blank" rel="noopener">GitHub Issues page</a>. Include your Windows version and a description of what happened.</p>
+          </div>
+        </section>
+
+        <hr class="docs-divider">
+
+        <!-- Known Limitations -->
+        <section id="known-limitations">
+          <h2>Known Limitations</h2>
+
+          <ul>
+            <li><strong>Mods and arcanes</strong> — not tracked; relay data contaminates small counts.</li>
+            <li><strong>Mission rewards</strong> — in-mission reward format is not yet identified; only post-mission inventory changes are captured.</li>
+            <li><strong>Rivens</strong> — not tracked.</li>
+            <li><strong>Sold item mastery</strong> — mastery from sold items would require account API authentication, which is not implemented.</li>
+            <li><strong>Slow first scan</strong> — the first scan after launch may take up to 90 seconds on debug builds. Release builds are significantly faster.</li>
+          </ul>
+        </section>
+
+      </article>
+    </main>
+
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
