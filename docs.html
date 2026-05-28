@@ -104,11 +104,7 @@
           </div>
 
           <h3>Warframe API connection</h3>
-          <p>For full mod and arcane data, FrameForge connects to the Warframe Companion API. It scans your credentials automatically from game memory — no manual login needed for PC players. Once connected, inventory refreshes every 30 seconds in the background.</p>
-
-          <div class="callout callout-info">
-            <strong>Xbox / PlayStation:</strong> Automatic credential scanning only works on PC. Console players can enter their Account ID and Nonce manually in Settings.
-          </div>
+          <p>Basic mod and arcane counts come from memory scanning and work without any account connection. Connecting the Warframe API adds mod ranks and additional detail. Credentials are scanned automatically from game memory — no manual login needed.</p>
         </section>
 
         <hr class="docs-divider">
@@ -117,7 +113,7 @@
         <section id="inventory">
           <h2>Inventory</h2>
 
-          <p>The Inventory tab is the main view — everything you own, live. Items are organised into 14 categories:</p>
+          <p>The Inventory tab is the main view — everything you own, live. Items are organised into 13 categories:</p>
           <ul>
             <li>All Owned, Resources, Mods, Relics, Arcanes</li>
             <li>Warframes, Primary, Secondary, Melee, Companions, Archwing</li>
@@ -142,13 +138,13 @@
           </ul>
 
           <h3>Change log</h3>
-          <p>The bottom of the Inventory tab shows a running log of up to 200 quantity changes, each showing the item name, category, delta (±), old and new quantity, and timestamp.</p>
+          <p>The bottom of the Inventory tab shows your full quantity change history, each entry showing the item name, category, delta (±), old and new quantity, and timestamp.</p>
 
           <h3>Data sources</h3>
           <p>Inventory quantities come from two sources that are merged together:</p>
           <ul>
             <li><strong>Memory scanner</strong> — reads stackable items (resources, blueprints, relics) and unique items (warframes, weapons, companions) directly from the game process every 10 seconds. No credentials needed.</li>
-            <li><strong>Warframe API</strong> — when connected, provides authoritative counts for mods and arcanes including per-rank copy counts, plus Archon Shards and subsumed warframes. Refreshes every 30 seconds.</li>
+            <li><strong>Warframe API</strong> — when connected, adds mod ranks and additional detail on top of memory-scanned quantities.</li>
           </ul>
         </section>
 
@@ -173,8 +169,6 @@
           <h3>Additional indicators</h3>
           <ul>
             <li><strong>Vault badge</strong> — 🔒 Vaulted / 🔓 Available based on the current drop table</li>
-            <li><strong>Helminth icon</strong> — shown on warframes that can be subsumed</li>
-            <li><strong>Archon Shard slots</strong> — shows shard count, colour, and Tau-forged status per warframe</li>
             <li><strong>⚒ Crafting indicator</strong> — shown if a component is currently building</li>
           </ul>
 
@@ -258,7 +252,7 @@
             <li><strong>Search:</strong> by set name</li>
           </ul>
 
-          <p>Prices are cached for 1 hour and fetched fresh on the next app launch or manual refresh. No account required — requests go directly to the warframe.market public API.</p>
+          <p>Prices are cached for the current session. No account required — requests go directly to the warframe.market public API.</p>
         </section>
 
         <hr class="docs-divider">
@@ -309,9 +303,9 @@
 
           <div class="faq-item">
             <h3>Is FrameForge safe to use?</h3>
-            <p>FrameForge is strictly read-only. It uses <code>ReadProcessMemory</code> — the same Windows API used by Overwolf, Discord overlay, and hardware monitors. It never writes to memory, injects code, or hooks the game in any way.</p>
+            <p>FrameForge is strictly read-only. It uses <code>ReadProcessMemory</code> — the same Windows API used by Overwolf and hardware monitors. It never writes to memory, injects code, or hooks the game in any way.</p>
             <p>Network requests go only to <a href="https://warframe.market" target="_blank" rel="noopener">warframe.market</a> (for prices) and community GitHub repos (item catalog, drop rates). There is no FrameForge server, no telemetry, and nothing leaves your machine beyond those two sources.</p>
-            <p>Digital Extremes has publicly confirmed that read-only memory tools are acceptable. The full source code is available on <a href="https://github.com/Sikewyrm/FrameForge" target="_blank" rel="noopener">GitHub</a> under GPLv3 — you can read every line and verify exactly what it does.</p>
+            <p>Digital Extremes has historically permitted read-only companion tools. The full source code is available on <a href="https://github.com/Sikewyrm/FrameForge" target="_blank" rel="noopener">GitHub</a> under GPLv3 — you can read every line and verify exactly what it does.</p>
           </div>
 
           <div class="faq-item">
@@ -332,11 +326,6 @@
           <div class="faq-item">
             <h3>Will you add trading features?</h3>
             <p>Yes, trading features are planned for a future release.</p>
-          </div>
-
-          <div class="faq-item">
-            <h3>Does it work on console (Xbox / PlayStation)?</h3>
-            <p>The app itself is Windows-only, but console players who play on PC can connect their account manually via Settings → Account connection using their Account ID and Nonce.</p>
           </div>
 
           <div class="faq-item">
